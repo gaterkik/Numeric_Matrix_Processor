@@ -18,11 +18,13 @@ def print_matrix(matrix):
 
 a = input_matrix()
 # print_matrix(a)
-b = input_matrix()
+# b = input_matrix()
+c = int(input())
 
-if a.shape == b.shape:
-    print_matrix(a + b)
-else:
-    print('ERROR')
 
-# print(a)
+# if a.shape == b.shape:
+#     print_matrix(a + b)
+# else:
+#     print('ERROR')
+
+print_matrix(a * c)

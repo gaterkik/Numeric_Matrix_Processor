@@ -7,6 +7,7 @@ def show_menu():
 2. Multiply matrix by a constant
 3. Multiply matrices
 4. Transpose matrix
+5. Calculate a determinant
 0. Exit''')
     user_choice = input('Your choice:')
     if user_choice == '1':
@@ -17,6 +18,8 @@ def show_menu():
         multiply_matrices()
     if user_choice == '4':
         transpose_matrix()
+    if user_choice == '5':
+        determinant_matrix()
     if user_choice == '0':
         pass
 
@@ -79,6 +82,16 @@ def transpose_matrix():
         print_matrix(numpy.fliplr(a))
     if user_choice == '4':
         print_matrix(numpy.flipud(a))
+    show_menu()
+
+
+def determinant_matrix():
+    print('Enter matrix size:')
+    m, n = (int(i) for i in input().split(' '))
+    print('Enter matrix:')
+    a = input_matrix(m, n)
+    print('The result is:')
+    print(numpy.linalg.det(a))
     show_menu()
 
 

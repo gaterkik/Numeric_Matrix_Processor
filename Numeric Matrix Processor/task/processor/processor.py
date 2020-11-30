@@ -8,6 +8,7 @@ def show_menu():
 3. Multiply matrices
 4. Transpose matrix
 5. Calculate a determinant
+6. Inverse matrix
 0. Exit''')
     user_choice = input('Your choice:')
     if user_choice == '1':
@@ -20,6 +21,8 @@ def show_menu():
         transpose_matrix()
     if user_choice == '5':
         determinant_matrix()
+    if user_choice == '6':
+        inverse_matrix()
     if user_choice == '0':
         pass
 
@@ -92,6 +95,17 @@ def determinant_matrix():
     a = input_matrix(m, n)
     print('The result is:')
     print(numpy.linalg.det(a))
+    show_menu()
+
+
+def inverse_matrix():
+    print('Enter matrix size:')
+    m, n = (int(i) for i in input().split(' '))
+    print('Enter matrix:')
+    a = input_matrix(m, n)
+    print('The result is:')
+    inverse_a = numpy.linalg.inv(a)
+    print_matrix(inverse_a)
     show_menu()
 
 
